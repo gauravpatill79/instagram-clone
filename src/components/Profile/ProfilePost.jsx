@@ -133,7 +133,7 @@ const ProfilePost = ({ post }) => {
 							<Flex flex={1} flexDir={"column"} px={10} display={{ base: "none", md: "flex" }}>
 								<Flex alignItems={"center"} justifyContent={"space-between"}>
 									<Flex alignItems={"center"} gap={4}>
-										<Avatar src={userProfile.profilePicURL} size={"sm"} name='As a Programmer' />
+										<Avatar src={userProfile.profilePicURL} size={"sm"} name='' />
 										<Text fontWeight={"bold"} fontSize={12}>
 											{userProfile.username}
 										</Text>
