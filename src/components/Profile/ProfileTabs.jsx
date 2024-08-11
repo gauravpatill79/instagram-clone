@@ -1,7 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { BsBookmark, BsGrid3X3, BsSuitHeart } from "react-icons/bs";
+import { RiVideoLine } from "react-icons/ri"; 
+const ProfileTabs = ({ activeTab, onTabChange }) => {
 
-const ProfileTabs = () => {
 	return (
 		<Flex
 			w={"full"}
@@ -10,7 +11,7 @@ const ProfileTabs = () => {
 			textTransform={"uppercase"}
 			fontWeight={"bold"}
 		>
-			<Flex borderTop={"1px solid white"} alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
+			<Flex borderTop={activeTab === "posts" ? "1px solid white" : ""} alignItems={"center"} p='3' gap={1} cursor={"pointer"} onClick={() => onTabChange("posts")}>
 				<Box fontSize={20}>
 					<BsGrid3X3 />
 				</Box>
@@ -19,16 +20,25 @@ const ProfileTabs = () => {
 				</Text>
 			</Flex>
 
-			<Flex alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
+			<Flex borderTop={activeTab === "reels" ? "1px solid white" : ""} alignItems={"center"} p='3' gap={1} cursor={"pointer"} onClick={() => onTabChange("reels")}>
+				<Box fontSize={20}>
+					<RiVideoLine />
+				</Box>
+				<Text fontSize={12} display={{ base: "none", sm: "block" }}>
+					Reels
+				</Text>
+			</Flex>
+
+			<Flex borderTop={activeTab === "saved" ? "1px solid white" : ""} alignItems={"center"} p='3' gap={1} cursor={"pointer"} onClick={() => onTabChange("saved")}>
 				<Box fontSize={20}>
 					<BsBookmark />
 				</Box>
-				<Text fontSize={12} display={{ base: "none", sm: "block" }}>
+				<Text fontSize={12} display={{ base: "none", sm: "block" } }>
 					Saved
 				</Text>
 			</Flex>
 
-			<Flex alignItems={"center"} p='3' gap={1} cursor={"pointer"}>
+			<Flex borderTop={activeTab === "likes" ? "1px solid white" : ""} alignItems={"center"} p='3' gap={1} cursor={"pointer"} onClick={() => onTabChange("likes")}>
 				<Box fontSize={20}>
 					<BsSuitHeart fontWeight={"bold"} />
 				</Box>
