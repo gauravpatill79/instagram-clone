@@ -1,5 +1,5 @@
 import {Box,GridItem,Image,Modal,ModalBody,ModalCloseButton,ModalContent,ModalOverlay,Text,Flex,Button,useDisclosure,Avatar} from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { BsPinAngleFill } from "react-icons/bs";
 import { FaComment } from "react-icons/fa";
@@ -16,6 +16,21 @@ const OpenSavedReels = ({ savedReels, setSortedReels }) => {
   const user = useAuth();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedReel, setSelectedReel] = useState(null);
+  const [isPinned, setIsPinned] = useState(false);
+
+  useEffect(() => {
+    if (selectedReel) {
+      // Check if the selected reel is pinned
+      const checkIfPinned = async () => {
+        const userDocRef = doc(firestore, "users", user.uid);
+        const userDoc = await getDoc(userDocRef);
+        const pinnedReels = userDoc.data()?.pinnedReels || [];
+        setIsPinned(pinnedReels.includes(selectedReel.id));
+      };
+
+      checkIfPinned();
+    }
+  }, [selectedReel, user]);
 
   const handlePinReel = async (reel) => {
     if (user) {
@@ -42,6 +57,7 @@ const OpenSavedReels = ({ savedReels, setSortedReels }) => {
       ];
       setSortedReels(updatedReels);
 
+      setIsPinned(true); // Update the pin status locally
       showToast("Reel pinned successfully!", "success");
     }
   };
@@ -152,7 +168,7 @@ const OpenSavedReels = ({ savedReels, setSortedReels }) => {
                       </Text>
                     </Flex>
                     <Button onClick={() => handlePinReel(selectedReel)}>
-                      <BsPinAngleFill />
+                      <BsPinAngleFill color={isPinned ? "yellow" : "white"} />
                     </Button>
                   </Flex>
                   <Flex
