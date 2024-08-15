@@ -7,10 +7,9 @@ export const savedItems = [
     id: 1,
     type: "reel",
     imageUrl: "https://picsum.photos/1024",
-    description: "Saved Post 1",
+    description: "Saved Reel 1",
     comments: [
         { id: 1, text: "Good Job" },
-        { id: 2, text: "Awesome reel!" }
     ],
     likes : 20,
   },
@@ -18,10 +17,9 @@ export const savedItems = [
     id: 2,
     type: "reel",
     imageUrl: "https://picsum.photos/1024?random=1",
-    description: "Saved Reel 1",
+    description: "Saved Reel 2",
     comments: [
         { id: 1, text: "Good Job" },
-        { id: 2, text: "Awesome reel!" }
     ],
     likes : 20,
   },
@@ -29,10 +27,9 @@ export const savedItems = [
     id: 3,
     type: "reel",
     imageUrl: "https://picsum.photos/1024?random=2",
-    description: "Saved Post 2",
+    description: "Saved Reel 3",
     comments: [
         { id: 1, text: "Good Job" },
-        { id: 2, text: "Awesome reel!" }
     ],
     likes : 20,
   },
@@ -40,10 +37,9 @@ export const savedItems = [
     id: 4,
     type: "reel",
     imageUrl: "https://picsum.photos/1024?random=3",
-    description: "Saved Reel 2",
+    description: "Saved Reel 4",
     comments: [
         { id: 1, text: "Good Job" },
-        { id: 2, text: "Awesome reel!" }
     ],
     likes : 20,
   },
@@ -51,10 +47,9 @@ export const savedItems = [
     id: 5,
     type: "reel",
     imageUrl: "https://picsum.photos/1024?random=4",
-    description: "Saved Reel 2",
+    description: "Saved Reel 5",
     comments: [
         { id: 1, text: "Good Job" },
-        { id: 2, text: "Awesome reel!" }
     ],
     likes : 20,
   },
@@ -62,10 +57,9 @@ export const savedItems = [
     id: 6,
     type: "reel",
     imageUrl: "https://picsum.photos/1024?random=5",
-    description: "Saved Reel 2",
+    description: "Saved Reel 6",
     comments: [
         { id: 1, text: "Good Job" },
-        { id: 2, text: "Awesome reel!" }
     ],
     likes : 20,
   }

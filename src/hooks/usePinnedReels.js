@@ -1,10 +1,9 @@
-import { firestore } from "../../firebase/firebase"; 
+import { firestore } from "../firebase/firebase"
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
 import useAuth from "./useAuth";
 
-const getPinReel = () => {
+const usePinnedReels = () => {
   const user = useAuth();
   const [pinnedReels, setPinnedReels] = useState([]);
 
@@ -23,4 +22,4 @@ const getPinReel = () => {
   return pinnedReels;
 };
 
-export default getPinReel;
+export default usePinnedReels;
