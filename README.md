@@ -1,7 +1,11 @@
-# Fullstack Instagram Clone Tutorial
+Pin Saved Reels Feature for Instagram
+A user-friendly feature that allows users to save and pin reels, similar to Instagram's pinned content experience.
 
-### Built With React, Firebase && Chakra UI
+#Functionality:
+Users can save reels to their personal collection.
 
-# [Tutorial](https://youtu.be/bQtAg7AFFrY)
+Users can pin up to 3 reels in their "Saved Reels" section.
 
-![Screenshot of App](https://i.ibb.co/PjkYLCk/Group-34.png)
+Attempting to pin a 4th reel prompts the user to unpin an existing reel first.
+
+Pinned reels appear at the top of the saved section for quick access.
